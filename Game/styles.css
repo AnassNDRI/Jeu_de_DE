@@ -1,111 +1,178 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
 }
 
 .game-container {
-    width: 600px;
-    margin: 30px auto;
-    text-align: center;
-    padding: 40px;
-    border: 2px solid #ccc;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    background: #fff;
-    border: 10px solid #fff; 
-    box-shadow: 0 0 0 10px #d7b29d, 
-                0 5px 20px rgba(0,0,0,0.2); 
-               
+  width: 600px;
+  max-width: 100%;
+  margin: 30px auto;
+  text-align: center;
+  padding: 40px;
+  border: 2px solid #ccc;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border: 10px solid #fff;
+  box-shadow: 0 0 0 10px #d7b29d, 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .player {
-    width: 30%;
-    display: inline-block;
-    margin: 10px;
-    font-size: 1.5em;
+  width: 30%;
+  display: inline-block;
+  margin: 10px;
+  font-size: 1.5em;
 }
 
 .player-name {
-    font-size: 1.2em;
-    color: #333;
+  font-size: 1.2em;
+  color: #333;
 }
 
 .player-score {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 .player-current {
-    background: #e74c3c;
-    color: white;
-    padding: 10px;
-    margin-top: 10px;
+  background: #e74c3c;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .player-current p {
-    margin: 0;
+  margin: 0;
 }
 
 .player-current-score {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 #diceCanvas {
-    border: 1px solid #333;
-    background-color: #fff;
-    margin-top: 20px;
+  border: 1px solid #333;
+  background-color: #fff;
+  margin-top: 20px;
 }
 
-.btn-new, .btn-roll, .btn-hold {
-   
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 1em;
-    cursor: pointer;
-    outline: none;
-    background-color: transparent;
-    color: gray;
+.btn-new,
+.btn-roll,
+.btn-hold {
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  color: gray;
 }
 
-.btn-new:hover, .btn-roll:hover, .btn-hold:hover {
-    background-color: rgb(171, 171, 172);
+.btn-new:hover,
+.btn-roll:hover,
+.btn-hold:hover {
+  background-color: rgb(171, 171, 172);
 }
-
 
 .btn-new {
-    position: absolute;
-    top: 20px; 
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: transparent;
-    color: gray;
-    padding: 10px 20px;
-    margin: 0;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 5px;
-    outline: none;
-    z-index: 1; 
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: gray;
+  padding: 10px 20px;
+  margin: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  z-index: 1;
 }
 
 .game-container {
-    position: relative; 
-    padding-top: 60px; 
+  position: relative;
+  padding-top: 60px;
 }
 
 .header {
-    background-color: wheat;
-    color: rgb(77, 74, 74);
-    padding: 40px;
+  background-color: wheat;
+  color: rgb(77, 74, 74);
+  padding: 40px;
 }
 
 .footer {
-    background-color: wheat;
-    color: rgb(77, 74, 74);
-    text-align: center;
+  background-color: wheat;
+  color: rgb(77, 74, 74);
+  text-align: center;
+}
+.footer a:hover {
+  background-color: #555; /* Couleur au survol */
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 768px) {
+  .game-container {
+    width: 90%;
+    padding: 20px;
   }
-  .footer a:hover {
-    background-color: #555; /* Couleur au survol */
+
+  .player {
+    width: 100%;
+    margin: 10px 0;
   }
-  
+
+  .btn-new {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #diceCanvas {
+    width: 80px;
+    height: 80px;
+  }
+
+  .player-score,
+  .player-current-score {
+    font-size: 1.8em;
+  }
+
+  .btn-roll,
+  .btn-hold {
+    width: 45%;
+    margin: 10px 2.5%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .player {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .btn-roll,
+  .btn-hold {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+  }
+
+  #diceCanvas {
+    width: 60px;
+    height: 60px;
+  }
+
+  .player-score,
+  .player-current-score {
+    font-size: 1.5em;
+  }
+}
